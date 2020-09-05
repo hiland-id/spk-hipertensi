@@ -54,6 +54,14 @@ $segmen2 = $this->uri->segment(2);
             </li>
           </ul>
         </li>
+        <li class="nav-item">
+          <a href="<?= base_url('diagnosa'); ?>" class="nav-link  <?= ($segmen1 == 'diagnosa') ? 'active' : ''; ?>">
+            <i class="nav-icon fas fa-check"></i>
+            <p>
+              Diagnosa
+            </p>
+          </a>
+        </li>
         <li class="nav-item has-treeview <?= ($segmen1 == 'master') ? 'menu-open' : ''; ?>">
           <a href="#" class="nav-link <?= ($segmen1 == 'master') ? 'active' : ''; ?>">
             <i class="nav-icon fas fa-copy"></i>
