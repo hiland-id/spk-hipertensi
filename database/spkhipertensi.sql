@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Sep 2020 pada 20.25
+-- Waktu pembuatan: 14 Sep 2020 pada 20.37
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.11
 
@@ -42,28 +42,9 @@ CREATE TABLE `akun` (
 
 INSERT INTO `akun` (`id_akun`, `nik`, `app_level`, `password`, `status`) VALUES
 (2, '123456789', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'A'),
-(3, '198609262015051002', 'admin', '827ccb0eea8a706c4c34a16891f84e7b', 'A');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `dokumen`
---
-
-CREATE TABLE `dokumen` (
-  `id_dokumen` int(11) NOT NULL,
-  `nip` varchar(20) NOT NULL,
-  `nama_dokumen` varchar(50) NOT NULL,
-  `type_dokumen` varchar(20) NOT NULL,
-  `keterangan` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `dokumen`
---
-
-INSERT INTO `dokumen` (`id_dokumen`, `nip`, `nama_dokumen`, `type_dokumen`, `keterangan`) VALUES
-(4, '198609262015051002', 'SK', 'SK', 'UMPAN.docx');
+(3, '198609262015051002', 'admin', '827ccb0eea8a706c4c34a16891f84e7b', 'A'),
+(5, '321006040497000001', 'admin', '827ccb0eea8a706c4c34a16891f84e7b', 'A'),
+(6, '321006040497000002', 'admin', '827ccb0eea8a706c4c34a16891f84e7b', 'A');
 
 -- --------------------------------------------------------
 
@@ -81,7 +62,6 @@ CREATE TABLE `gejala` (
 --
 
 INSERT INTO `gejala` (`id_gejala`, `gejala`) VALUES
-('', ''),
 ('G01', 'Nilai Sistolik <120  mmHg'),
 ('G02', 'Nilai Diastolik <80 mmHg'),
 ('G03', 'Nilai Sistolik  121 - 130 mmHg'),
@@ -111,52 +91,6 @@ INSERT INTO `gejala` (`id_gejala`, `gejala`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `notifikasi`
---
-
-CREATE TABLE `notifikasi` (
-  `id_notifikasi` int(11) NOT NULL,
-  `nik` varchar(20) NOT NULL,
-  `status_notifikasi` enum('R','U') NOT NULL COMMENT 'R=Read, U=Unread',
-  `tanggal_notifikasi` datetime NOT NULL,
-  `temp_tgl` date NOT NULL,
-  `jenis_notifikasi` enum('KB','KP','P') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `notifikasi`
---
-
-INSERT INTO `notifikasi` (`id_notifikasi`, `nik`, `status_notifikasi`, `tanggal_notifikasi`, `temp_tgl`, `jenis_notifikasi`) VALUES
-(117, '198609262015051002', 'R', '2020-07-29 00:30:27', '2020-07-29', 'KB'),
-(118, '198609262015051002', 'U', '2020-07-29 00:30:27', '2020-07-29', 'KP');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `pengangkatan`
---
-
-CREATE TABLE `pengangkatan` (
-  `id_pengangkatan` int(11) NOT NULL,
-  `nip` varchar(20) NOT NULL,
-  `tanggal_pengangkatan` date NOT NULL,
-  `nomor_sk` varchar(50) NOT NULL,
-  `tgl_kenaikan_berkala` date NOT NULL,
-  `tgl_kenaikan_pangkat` date NOT NULL,
-  `tgl_pensiun` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `pengangkatan`
---
-
-INSERT INTO `pengangkatan` (`id_pengangkatan`, `nip`, `tanggal_pengangkatan`, `nomor_sk`, `tgl_kenaikan_berkala`, `tgl_kenaikan_pangkat`, `tgl_pensiun`) VALUES
-(2, '198609262015051002', '2020-07-31', 'SK2', '2020-08-29', '2020-10-29', '2030-07-31');
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `penyakit`
 --
 
@@ -172,14 +106,14 @@ CREATE TABLE `penyakit` (
 --
 
 INSERT INTO `penyakit` (`id_penyakit`, `penyakit`, `deskripsi`, `id_terapi`) VALUES
-('K01', 'Optimal', '-', 'T01'),
-('K02', 'Normal', '-', 'T02'),
-('K03', 'Pra Hipertensi', '-', 'T01'),
-('K04', 'Hipertensi Derajat I', '-', 'T02'),
-('K05', 'Hipertensi Derajat II', '-', 'T02'),
-('K06', 'Hipertensi Urgensi Asimtomatik', '-', 'T02'),
-('K07', 'Hipertensi Urgensi Simtomatik', '-', 'T02'),
-('K08', 'Hipertensi Emergensi', '-', 'T02');
+('K01', 'Optimal', 'tekanan darah Optimal menurut WHO adalah kurang atau sama dengan 120/80 mmHg. Tekanan darah optimal perlu dijaga setiap harinya. Caranya adalah dengan menerapkan pola hidup sehat, mulai dari mengonsumsi makanan sehat, menjaga berat badan ideal, hingga berolahraga teratur.', 'T01'),
+('K02', 'Normal', 'Tekanan darah normal menurut WHO adalah kurang atau sama dengan 130/85 mmHg. Tekanan darah normal perlu dijaga setiap harinya. Caranya adalah dengan menerapkan pola hidup sehat, mulai dari mengonsumsi makanan sehat, menjaga berat badan ideal, hingga berolahraga teratur.', 'T02'),
+('K03', 'Pra Hipertensi', 'Kondisi prahipertensi memiliki risiko yang lebih tinggi terhadap kejadian penyakit kardiovaskular, seperti penyakit jantung koroner dan stroke. Perubahan gaya hidup sehat dan resep obat penurun tekanan darah dari dokter mungkin diperlukan pasien, agar tidak risiko terjadinya kondisi medis serius menurun.Kondisi prahipertensi memiliki risiko yang lebih tinggi terhadap kejadian penyakit kardiovaskular, seperti penyakit jantung koroner dan stroke. Perubahan gaya hidup sehat dan resep obat penurun tekanan darah dari dokter mungkin diperlukan pasien, agar tidak risiko terjadinya kondisi medis serius menurun.', 'T01'),
+('K04', 'Hipertensi Derajat I', 'Tekanan darah sistolik 140–159 mmHg atau tekanan darah diastolik 90–99 mmHg. Jika tekanan darah sistolik atau diastolik Anda berada pada rentang ini, Anda sudah memerlukan pengobatan karena risiko terjadinya kerusakan pada organ menjadi lebih tinggi.', 'T02'),
+('K05', 'Hipertensi Derajat II', 'Tekanan darah sistolik > 160 mmHg atau tekanan darah diastolik > dari 100 mmHg. Pada tahap ini, penderita biasanya membutuhkan lebih dari satu obat.', 'T02'),
+('K06', 'Hipertensi Urgensi Asimtomatik', 'Urgensi hipertensi adalah situasi klinis di mana tekanan darah sangat tinggi (misalnya, ≥180 / ≥110 mmHg) dengan gejala minimal atau tanpa gejala, dan tidak ada tanda atau gejala yang menunjukkan kerusakan organ akut.', 'T02'),
+('K07', 'Hipertensi Urgensi Simtomatik', 'Urgensi hipertensi adalah situasi klinis di mana tekanan darah sangat tinggi (misalnya, ≥180 / ≥110 mmHg) dengan gejala minimal atau tanpa gejala, dan tidak ada tanda atau gejala yang menunjukkan kerusakan organ akut.', 'T02'),
+('K08', 'Hipertensi Emergensi', 'Seseorang disebut mengalami hipertensi emergensi apabila tekanan darah sistoliknya lebih dari 220 mmHg dan diastoliknya lebih dari 140 mmHg. Jika tidak diatasi, hipertensi emergensi dapat menyebabkan kerusakan berat pada organ tubuh.', 'T02');
 
 -- --------------------------------------------------------
 
@@ -207,66 +141,6 @@ INSERT INTO `ref_agama` (`id_agama`, `nama_agama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ref_golongan`
---
-
-CREATE TABLE `ref_golongan` (
-  `id_golongan` int(11) NOT NULL,
-  `nama_golongan` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `ref_golongan`
---
-
-INSERT INTO `ref_golongan` (`id_golongan`, `nama_golongan`) VALUES
-(1, 'I/A'),
-(3, 'I/B'),
-(4, 'I/C'),
-(5, 'I/D'),
-(6, 'II/A'),
-(7, 'II/B'),
-(8, 'II/C'),
-(9, 'II/D'),
-(10, 'III/A'),
-(11, 'III/B'),
-(12, 'III/C'),
-(13, 'III/D'),
-(14, 'IV/A'),
-(15, 'IV/B'),
-(16, 'IV/C'),
-(17, 'IV/D'),
-(18, 'IV/E');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `ref_jabatan`
---
-
-CREATE TABLE `ref_jabatan` (
-  `id_jabatan` int(11) NOT NULL,
-  `nama_jabatan` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `ref_jabatan`
---
-
-INSERT INTO `ref_jabatan` (`id_jabatan`, `nama_jabatan`) VALUES
-(1, 'CAMAT'),
-(2, 'SEKRETARIS'),
-(3, 'KASUBAG UMUM DAN KEPEGAWAIAN'),
-(4, 'KASUBAG PEP DAN KEUANGAN'),
-(5, 'KASI PEMERINTAHAN DAN PELAYANAN'),
-(6, 'KASI KESEJAHTERAAN SOSIAL'),
-(7, 'KASI PEMBANGUNAN DAN PEMBERDAYAAN MASYARAKAT'),
-(8, 'KASI TRANTIBUM'),
-(9, 'PELAKSANA');
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `ref_jk`
 --
 
@@ -286,28 +160,24 @@ INSERT INTO `ref_jk` (`id_jk`, `nama_jk`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `riwayat_kenaikan_pangkat`
+-- Struktur dari tabel `riwayat_periksa`
 --
 
-CREATE TABLE `riwayat_kenaikan_pangkat` (
+CREATE TABLE `riwayat_periksa` (
   `id_riwayat` int(11) NOT NULL,
-  `nip` varchar(20) NOT NULL,
-  `id_jabatan` int(11) NOT NULL,
-  `id_golongan` int(11) NOT NULL,
-  `tanggal_kenaikan` date NOT NULL,
-  `kenaikan_berkala` date NOT NULL,
-  `kenaikan_pangkat` date NOT NULL,
-  `pensiun` date NOT NULL,
-  `no_sk` varchar(50) NOT NULL
+  `nik` varchar(20) NOT NULL,
+  `id_penyakit` varchar(5) NOT NULL,
+  `tgl_periksa` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `riwayat_kenaikan_pangkat`
+-- Dumping data untuk tabel `riwayat_periksa`
 --
 
-INSERT INTO `riwayat_kenaikan_pangkat` (`id_riwayat`, `nip`, `id_jabatan`, `id_golongan`, `tanggal_kenaikan`, `kenaikan_berkala`, `kenaikan_pangkat`, `pensiun`, `no_sk`) VALUES
-(2, '198609262015051002', 1, 13, '2020-07-26', '2022-07-26', '2022-07-26', '2022-07-26', 'SK'),
-(6, '198609262015051002', 1, 14, '2020-07-31', '2020-08-29', '2020-10-29', '2030-07-31', 'SK2');
+INSERT INTO `riwayat_periksa` (`id_riwayat`, `nik`, `id_penyakit`, `tgl_periksa`) VALUES
+(5, '321006040497000001', 'K03', '0000-00-00'),
+(6, '123456789', 'K01', '0000-00-00'),
+(7, '123456789', 'K01', '2020-09-15');
 
 -- --------------------------------------------------------
 
@@ -341,7 +211,23 @@ INSERT INTO `rule` (`id_rule`, `id_gejala`, `id_penyakit`) VALUES
 (13, 'G10', 'K05'),
 (14, 'G15', 'K05'),
 (15, 'G16', 'K05'),
-(16, 'G17', 'K05');
+(16, 'G17', 'K05'),
+(17, 'G11', 'K06'),
+(18, 'G12', 'K06'),
+(19, 'G15', 'K06'),
+(20, 'G16', 'K06'),
+(21, 'G20', 'K06'),
+(22, 'G11', 'K07'),
+(23, 'G12', 'K07'),
+(24, 'G21', 'K07'),
+(25, 'G22', 'K07'),
+(26, 'G13', 'K08'),
+(27, 'G14', 'K08'),
+(28, 'G18', 'K08'),
+(29, 'G22', 'K08'),
+(30, 'G23', 'K08'),
+(31, 'G24', 'K08'),
+(32, 'G25', 'K08');
 
 -- --------------------------------------------------------
 
@@ -395,7 +281,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_pegawai`, `nik`, `nama`, `gelar_depan`, `gelar_belakang`, `tempat_lahir`, `tanggal_lahir`, `id_jk`, `id_agama`, `foto`, `email`, `id_desa`, `id_kecamatan`, `id_kabupaten`, `id_provinsi`, `alamat_lengkap`, `no_telepon`, `id_jabatan`, `id_golongan`) VALUES
-(3, '123456789', 'Yayat Nurhidaya', '', 'S.Kom', 'Majalengka', '1997-04-04', 1, 1, 'pancingan.jpg', 'yayat9744@gmail.com', '3210060004', '3210060', '3210', 32, 'Panyindangan', '087654678876', 1, 14);
+(3, '123456789', 'Admin', 'Dr.', '', 'Padang', '1997-04-04', 1, 1, 'admin.png', 'admin@gmail.com', '3210060004', '3210060', '3210', 32, 'Panyindangan', '087654678876', 1, 14),
+(6, '321006040497000001', 'Bpk X', '', '', 'a', '2018-01-01', 1, 1, 'avatar.png', '', '1371060010', '1371060', '1371', 13, 'a', '089720903314', 0, 0),
+(7, '321006040497000002', 'Ibu X', '', '', 'Padang', '2018-02-02', 2, 1, 'avatar2.png', '', '1376011010', '1376011', '1376', 13, 'a', '089987765678', 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -408,22 +296,10 @@ ALTER TABLE `akun`
   ADD PRIMARY KEY (`id_akun`);
 
 --
--- Indeks untuk tabel `dokumen`
+-- Indeks untuk tabel `gejala`
 --
-ALTER TABLE `dokumen`
-  ADD PRIMARY KEY (`id_dokumen`);
-
---
--- Indeks untuk tabel `notifikasi`
---
-ALTER TABLE `notifikasi`
-  ADD PRIMARY KEY (`id_notifikasi`);
-
---
--- Indeks untuk tabel `pengangkatan`
---
-ALTER TABLE `pengangkatan`
-  ADD PRIMARY KEY (`id_pengangkatan`);
+ALTER TABLE `gejala`
+  ADD PRIMARY KEY (`id_gejala`);
 
 --
 -- Indeks untuk tabel `penyakit`
@@ -438,27 +314,15 @@ ALTER TABLE `ref_agama`
   ADD PRIMARY KEY (`id_agama`);
 
 --
--- Indeks untuk tabel `ref_golongan`
---
-ALTER TABLE `ref_golongan`
-  ADD PRIMARY KEY (`id_golongan`);
-
---
--- Indeks untuk tabel `ref_jabatan`
---
-ALTER TABLE `ref_jabatan`
-  ADD PRIMARY KEY (`id_jabatan`);
-
---
 -- Indeks untuk tabel `ref_jk`
 --
 ALTER TABLE `ref_jk`
   ADD PRIMARY KEY (`id_jk`);
 
 --
--- Indeks untuk tabel `riwayat_kenaikan_pangkat`
+-- Indeks untuk tabel `riwayat_periksa`
 --
-ALTER TABLE `riwayat_kenaikan_pangkat`
+ALTER TABLE `riwayat_periksa`
   ADD PRIMARY KEY (`id_riwayat`);
 
 --
@@ -488,25 +352,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `akun`
 --
 ALTER TABLE `akun`
-  MODIFY `id_akun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT untuk tabel `dokumen`
---
-ALTER TABLE `dokumen`
-  MODIFY `id_dokumen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT untuk tabel `notifikasi`
---
-ALTER TABLE `notifikasi`
-  MODIFY `id_notifikasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
-
---
--- AUTO_INCREMENT untuk tabel `pengangkatan`
---
-ALTER TABLE `pengangkatan`
-  MODIFY `id_pengangkatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_akun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `ref_agama`
@@ -515,40 +361,28 @@ ALTER TABLE `ref_agama`
   MODIFY `id_agama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `ref_golongan`
---
-ALTER TABLE `ref_golongan`
-  MODIFY `id_golongan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
-
---
--- AUTO_INCREMENT untuk tabel `ref_jabatan`
---
-ALTER TABLE `ref_jabatan`
-  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
 -- AUTO_INCREMENT untuk tabel `ref_jk`
 --
 ALTER TABLE `ref_jk`
   MODIFY `id_jk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `riwayat_kenaikan_pangkat`
+-- AUTO_INCREMENT untuk tabel `riwayat_periksa`
 --
-ALTER TABLE `riwayat_kenaikan_pangkat`
-  MODIFY `id_riwayat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE `riwayat_periksa`
+  MODIFY `id_riwayat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `rule`
 --
 ALTER TABLE `rule`
-  MODIFY `id_rule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_rule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
