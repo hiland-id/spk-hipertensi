@@ -11,7 +11,7 @@ $segmen3 = $this->uri->segment(3);
         <h4 class="m-0 text-dark">
           <?php
           if ($segmen1 != "" && $segmen2 == "" && $segmen3 == "") :
-            echo ucfirst($segmen1);
+            echo ($segmen1 == 'user') ? "Pengguna" : ucfirst($segmen1);
           elseif ($segmen1 != "" && $segmen2 != "" && $segmen3 == "") :
             echo ucfirst($segmen2);
           elseif ($segmen1 != "" && $segmen2 != "" && $segmen3 != "") :

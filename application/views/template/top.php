@@ -11,8 +11,8 @@
     <!-- Messages Dropdown Menu -->
     <!-- Notifications Dropdown Menu -->
     <li class="nav-item dropdown">
-      <a class="nav-link" data-toggle="dropdown" href="#" onclick="get_notif_on_top();">
-        <i class="far fa-bell"></i>
+      <a class="nav-link" data-toggle="dropdown" href="#" onclick="logout();">
+        <i class="fas fa-sign-out-alt"></i>
         <span class="badge badge-warning navbar-badge jml_notif"></span>
       </a>
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" id="area-notifikasi">
@@ -22,4 +22,3 @@
   </ul>
 </nav>
 <!-- /.navbar -->
-<audio id="sound_notif" src="<?= base_url(); ?>aset/sound/my_sound_02.mp3" type="audio/mp3"></audio>

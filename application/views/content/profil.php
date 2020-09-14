@@ -11,10 +11,10 @@
                 $no = 1;
                 ?>
                 <div class="text-center">
-                  <img class="profile-user-img img-fluid img-circle" src="<?= base_url('upload/' . $session['foto']); ?>" alt="User profile picture">
+                  <img src="<?= (!empty($session['foto'])) ? base_url('upload/' . $session['foto']) : base_url('aset/dist/img/default-150x150.png'); ?>" class="img-circle elevation-2" alt="Foto Profil">
                 </div>
 
-                <h3 class="profile-username text-center"><?= (!empty($dt_user->gelar_depan)) ? $dt_user->gelar_depan . ". " . $dt_user->nama . ", " . $dt_user->gelar_belakang : "" . $dt_user->nama . ", " . $dt_user->gelar_belakang; ?></h3>
+                <h3 class="profile-username text-center"><?= $dt_user->nama; ?></h3>
 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">

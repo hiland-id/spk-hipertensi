@@ -10,11 +10,12 @@ class M_diagnosa extends CI_Model
     }
 
     public function get_user()
-	{
-		$this->db->from('user');
-		$query = $this->db->get();
-		return $query->result();
-	}
+    {
+        $this->db->from('user');
+        ($this->session->userdata('app_level') != 'admin') ? $this->db->where('nik', $this->session->userdata('nik')) : "";
+        $query = $this->db->get();
+        return $query->result();
+    }
 
     public function count_penyakit()
     {
@@ -61,17 +62,32 @@ class M_diagnosa extends CI_Model
                     'deskripsi' => $data->deskripsi,
                     'terapi' => $data->terapi,
                     'skor' => $skor,
-                    'nik'=>$pasien->nama,
+                    'nik' => $pasien->nik,
+                    'nama' => $pasien->nama
                 ];
-                $data = array('id_penyakit' => $data->id_penyakit_aktif,
-                    'nik'=>$pasien->nik,
-                    'tgl_periksa'=>date('Y-m-d')
-                );
-                $query=$this->db->insert('riwayat_periksa', $data);
-           }
+            }
         }
 
-        return $diagnosa;
+        $arr_skor = array();
+        $data_simpan = array();
+        foreach ($diagnosa as $value) {
+            array_push($arr_skor, $value['skor']);
+        }
+        foreach ($diagnosa as $value) {
+            if (max($arr_skor) == $value['skor']) {
+                $data = array(
+                    'id_penyakit' => $value['id_penyakit'],
+                    'nik' => $value['nik'],
+                    'tgl_periksa' => date('Y-m-d')
+                );
+                array_push($data_simpan, $data);
+            }
+        }
+
+        $query = $this->db->insert_batch('riwayat_periksa', $data_simpan);
+        if ($query) {
+            return $diagnosa;
+        }
     }
 }
 

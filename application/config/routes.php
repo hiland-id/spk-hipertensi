@@ -51,6 +51,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 */
 // $route['default_controller'] = 'welcome';
 $route['default_controller'] = 'login';
-$route['pegawai/dokumen'] = 'Dokumen';
+$route['user/riwayat'] = 'riwayat';
+$route['diagnosa/riwayat'] = 'riwayat';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

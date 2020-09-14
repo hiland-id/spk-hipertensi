@@ -15,191 +15,42 @@ class M_dashboard extends CI_Model
         }
     }
 
-    public function q_gol_1_a()
+    public function get_dt_gejala()
     {
-        $this->db->from('user a');
-        $this->db->join('ref_golongan b', 'a.id_golongan = b.id_golongan', 'left');
-        $this->db->where('b.nama_golongan', 'I/A');
-        $q = $this->db->get();
-        if ($q) {
-            return $q->num_rows();
-        }
+        return $this->db->get('gejala')->num_rows();
     }
 
-    public function q_gol_1_b()
+    public function get_dt_penyakit()
     {
-        $this->db->from('user a');
-        $this->db->join('ref_golongan b', 'a.id_golongan = b.id_golongan', 'left');
-        $this->db->where('b.nama_golongan', 'I/B');
-        $q = $this->db->get();
-        if ($q) {
-            return $q->num_rows();
-        }
+        return $this->db->get('penyakit')->num_rows();
     }
 
-    public function q_gol_1_c()
+    public function get_dt_rule()
     {
-        $this->db->from('user a');
-        $this->db->join('ref_golongan b', 'a.id_golongan = b.id_golongan', 'left');
-        $this->db->where('b.nama_golongan', 'I/C');
-        $q = $this->db->get();
-        if ($q) {
-            return $q->num_rows();
-        }
+        return $this->db->get('rule')->num_rows();
     }
 
-    public function q_gol_1_d()
+    public function get_dt_pasien()
     {
-        $this->db->from('user a');
-        $this->db->join('ref_golongan b', 'a.id_golongan = b.id_golongan', 'left');
-        $this->db->where('b.nama_golongan', 'I/D');
-        $q = $this->db->get();
-        if ($q) {
-            return $q->num_rows();
-        }
+        return $this->db->from('akun')->where('app_level', 'user')->get()->num_rows();
     }
 
-    public function q_gol_2_a()
+    public function get_dt_check_up()
     {
-        $this->db->from('user a');
-        $this->db->join('ref_golongan b', 'a.id_golongan = b.id_golongan', 'left');
-        $this->db->where('b.nama_golongan', 'II/A');
-        $q = $this->db->get();
-        if ($q) {
-            return $q->num_rows();
-        }
+        return $this->db->from('riwayat_periksa')->where('nik', $this->session->userdata('nik'))->get()->num_rows();
     }
 
-    public function q_gol_2_b()
+    public function get_dt_check_up_latest()
     {
-        $this->db->from('user a');
-        $this->db->join('ref_golongan b', 'a.id_golongan = b.id_golongan', 'left');
-        $this->db->where('b.nama_golongan', 'II/B');
-        $q = $this->db->get();
-        if ($q) {
-            return $q->num_rows();
-        }
-    }
-
-    public function q_gol_2_c()
-    {
-        $this->db->from('user a');
-        $this->db->join('ref_golongan b', 'a.id_golongan = b.id_golongan', 'left');
-        $this->db->where('b.nama_golongan', 'II/C');
-        $q = $this->db->get();
-        if ($q) {
-            return $q->num_rows();
-        }
-    }
-
-    public function q_gol_2_d()
-    {
-        $this->db->from('user a');
-        $this->db->join('ref_golongan b', 'a.id_golongan = b.id_golongan', 'left');
-        $this->db->where('b.nama_golongan', 'II/D');
-        $q = $this->db->get();
-        if ($q) {
-            return $q->num_rows();
-        }
-    }
-
-    public function q_gol_3_a()
-    {
-        $this->db->from('user a');
-        $this->db->join('ref_golongan b', 'a.id_golongan = b.id_golongan', 'left');
-        $this->db->where('b.nama_golongan', 'III/A');
-        $q = $this->db->get();
-        if ($q) {
-            return $q->num_rows();
-        }
-    }
-
-    public function q_gol_3_b()
-    {
-        $this->db->from('user a');
-        $this->db->join('ref_golongan b', 'a.id_golongan = b.id_golongan', 'left');
-        $this->db->where('b.nama_golongan', 'III/B');
-        $q = $this->db->get();
-        if ($q) {
-            return $q->num_rows();
-        }
-    }
-
-    public function q_gol_3_c()
-    {
-        $this->db->from('user a');
-        $this->db->join('ref_golongan b', 'a.id_golongan = b.id_golongan', 'left');
-        $this->db->where('b.nama_golongan', 'III/C');
-        $q = $this->db->get();
-        if ($q) {
-            return $q->num_rows();
-        }
-    }
-
-    public function q_gol_3_d()
-    {
-        $this->db->from('user a');
-        $this->db->join('ref_golongan b', 'a.id_golongan = b.id_golongan', 'left');
-        $this->db->where('b.nama_golongan', 'III/D');
-        $q = $this->db->get();
-        if ($q) {
-            return $q->num_rows();
-        }
-    }
-
-    public function q_gol_4_a()
-    {
-        $this->db->from('user a');
-        $this->db->join('ref_golongan b', 'a.id_golongan = b.id_golongan', 'left');
-        $this->db->where('b.nama_golongan', 'IV/A');
-        $q = $this->db->get();
-        if ($q) {
-            return $q->num_rows();
-        }
-    }
-
-    public function q_gol_4_b()
-    {
-        $this->db->from('user a');
-        $this->db->join('ref_golongan b', 'a.id_golongan = b.id_golongan', 'left');
-        $this->db->where('b.nama_golongan', 'IV/B');
-        $q = $this->db->get();
-        if ($q) {
-            return $q->num_rows();
-        }
-    }
-
-    public function q_gol_4_c()
-    {
-        $this->db->from('user a');
-        $this->db->join('ref_golongan b', 'a.id_golongan = b.id_golongan', 'left');
-        $this->db->where('b.nama_golongan', 'IV/C');
-        $q = $this->db->get();
-        if ($q) {
-            return $q->num_rows();
-        }
-    }
-
-    public function q_gol_4_d()
-    {
-        $this->db->from('user a');
-        $this->db->join('ref_golongan b', 'a.id_golongan = b.id_golongan', 'left');
-        $this->db->where('b.nama_golongan', 'IV/D');
-        $q = $this->db->get();
-        if ($q) {
-            return $q->num_rows();
-        }
-    }
-
-    public function q_gol_4_e()
-    {
-        $this->db->from('user a');
-        $this->db->join('ref_golongan b', 'a.id_golongan = b.id_golongan', 'left');
-        $this->db->where('b.nama_golongan', 'IV/E');
-        $q = $this->db->get();
-        if ($q) {
-            return $q->num_rows();
-        }
+        $this->db->from('riwayat_periksa');
+        $this->db->join('user', 'riwayat_periksa.nik=user.nik', 'left');
+        $this->db->join('penyakit', 'riwayat_periksa.id_penyakit=penyakit.id_penyakit', 'left');
+        $this->db->join('terapi', 'penyakit.id_terapi=terapi.id_terapi', 'left');
+        ($this->session->userdata('app_level') != 'admin') ? $this->db->where('riwayat_periksa.nik', $this->session->userdata('nik')) : "";
+        $this->db->order_by('riwayat_periksa.id_riwayat', 'desc');
+        $this->db->limit(1);
+        $query = $this->db->get();
+        return $query->result();
     }
 }
 

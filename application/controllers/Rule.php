@@ -1,58 +1,53 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Rule extends CI_Controller {
+class Rule extends MY_Controller
+{
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('m_rule');
-		if (!$this->session->userdata('nik')) {
-			redirect('login');
-		}
-		
 	}
 
 	public function index()
 	{
-		$data['session']=$this->session->all_userdata();
-		$data['rule']=$this->m_rule->get_data();
-        $data['gejala'] =$this->m_rule->get_gejala();
-        $data['penyakit'] =$this->m_rule->get_penyakit();
-		$data['tampilan']='rule';
+		$data['session'] = $this->session->all_userdata();
+		$data['rule'] = $this->m_rule->get_data();
+		$data['gejala'] = $this->m_rule->get_gejala();
+		$data['penyakit'] = $this->m_rule->get_penyakit();
+		$data['tampilan'] = 'rule';
 		$this->load->view('template/media', $data);
 	}
 
 	public function tambah()
 	{
-		$data['tampilan']='tambah-rule';
+		$data['tampilan'] = 'tambah-rule';
 		$this->load->view('template/media', $data);
 	}
 
 	public function edit($id_rule)
 	{
 		$data['edit'] = $this->m_rule->get_data_edit($id_rule);
-		$this->load->view('edit',$data);
+		$this->load->view('edit', $data);
 	}
-	//edit ajak
 
 	public function simpan()
 	{
-		if(empty($this->input->post('id_rule'))){
+		if (empty($this->input->post('id_rule'))) {
 			$aksi = $this->m_rule->simpan();
-			if($aksi){
-				$this->session->set_flashdata('berhasil','Data rule Berhasil Disimpan');
+			if ($aksi) {
+				$this->session->set_flashdata('berhasil', 'Data rule Berhasil Disimpan');
 				redirect('rule');
-			}else{
-				$this->session->set_flashdata('gagal','Data rule Gagal Disimpan');
+			} else {
+				$this->session->set_flashdata('gagal', 'Data rule Gagal Disimpan');
 				redirect('rule/tambah');
 			}
-		}else{
+		} else {
 			$aksi = $this->m_rule->ubah();
-			if($aksi){
-				$this->session->set_flashdata('berhasil','Data rule Berhasil Diubah');
+			if ($aksi) {
+				$this->session->set_flashdata('berhasil', 'Data rule Berhasil Diubah');
 				redirect('rule');
-			}else{
-				$this->session->set_flashdata('berhasil','Data rule Tidak Berhasil Diubah');
+			} else {
+				$this->session->set_flashdata('berhasil', 'Data rule Tidak Berhasil Diubah');
 				redirect('rule/edit');
 			}
 		}
@@ -61,15 +56,14 @@ class Rule extends CI_Controller {
 	public function hapus($id_rule)
 	{
 		$aksi = $this->m_rule->delete($id_rule);
-		if($aksi){
-			$this->session->set_flashdata('berhasil','Data rule Berhasil Dihapus');
+		if ($aksi) {
+			$this->session->set_flashdata('berhasil', 'Data rule Berhasil Dihapus');
 			redirect('rule');
-		}else{
-			$this->session->set_flashdata('gagal','Data rule Tidak Berhasil Dihapus');
+		} else {
+			$this->session->set_flashdata('gagal', 'Data rule Tidak Berhasil Dihapus');
 			redirect('rule');
 		}
 	}
-
 }
 
 /* End of file Rule.php */

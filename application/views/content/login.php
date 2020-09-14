@@ -30,7 +30,7 @@
 
         <form action="<?= base_url('login/cek_login'); ?>" method="post" role="form">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="username" name="nik">
+            <input type="text" class="form-control" placeholder="Username" name="nik" required>
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-user"></span>
@@ -38,7 +38,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Password" name="password">
+            <input type="password" class="form-control" placeholder="Password" name="password" required>
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -46,16 +46,8 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-8">
-              <div class="icheck-primary">
-                <a href="#">
-                  <label for="remember">
-                    Lupa password?
-                  </label></a>
-              </div>
-            </div>
             <!-- /.col -->
-            <div class="col-4">
+            <div class="col-12">
               <button type="submit" class="btn btn-primary btn-block">Masuk</button>
             </div>
             <!-- /.col -->

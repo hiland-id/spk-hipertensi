@@ -2,17 +2,12 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class User extends CI_Controller
+class User extends MY_Controller
 {
 
     function __construct()
     {
         parent::__construct();
-        $this->load->model('m_login');
-        $this->load->model('m_user');
-        if (!$this->session->userdata('nik')) {
-            redirect('login');
-        }
     }
 
     public function index()
@@ -24,28 +19,6 @@ class User extends CI_Controller
         $data['dt_agama'] = $this->m_user->get_data_agama();
         $this->load->view('template/media', $data);
     }
-
-    public function dokumen()
-    {
-        echo ":LAMAN DOKUMEN";
-    }
-
-    // public function riwayat()
-    // {
-    //     if (empty($this->uri->segment(3))) {
-    //         $data['session'] = $this->session->all_userdata();
-    //         $data['tampilan'] = 'riwayat';
-    //         $data['dt_user'] = $this->m_user->get_data_user();
-    //         $this->load->view('template/media', $data);
-    //     } else {
-    //         $nik = $this->uri->segment(3);
-    //         $data['session'] = $this->session->all_userdata();
-    //         $data['tampilan'] = 'list_riwayat';
-    //         $data['dt_riwayat'] = $this->m_user->get_data_riwayat($nik);
-    //         $data['nik'] = $this->uri->segment(3);
-    //         $this->load->view('template/media', $data);
-    //     }
-    // }
 
     public function simpan()
     {
@@ -100,19 +73,6 @@ class User extends CI_Controller
         }
     }
 
-    // public function update_dt_riwayat()
-    // {
-    //     $nik = $this->input->post('nik');
-    //     $query = $this->m_user->update_dt_riwayat();
-    //     if ($query) {
-    //         $this->session->set_flashdata("berhasil", "Update data berhasil");
-    //         redirect('user/riwayat/' . $nik);
-    //     } else {
-    //         $this->session->set_flashdata("gagal", "Update data tidak berhasil");
-    //         redirect('user/riwayat/' . $nik);
-    //     }
-    // }
-
     public function hapus($nik)
     {
         $query = $this->m_user->hapus_dt_user($nik);
@@ -136,18 +96,6 @@ class User extends CI_Controller
             redirect('user');
         }
     }
-
-    // public function hapus_riwayat($id_riwayat, $nik)
-    // {
-    //     $query = $this->m_user->hapus_dt_riwayat($id_riwayat);
-    //     if ($query) {
-    //         $this->session->set_flashdata("berhasil", "Hapus data berhasil");
-    //         redirect('user/riwayat/' . $nik);
-    //     } else {
-    //         $this->session->set_flashdata("gagal", "Hapus data tidak berhasil");
-    //         redirect('user/riwayat/' . $nik);
-    //     }
-    // }
 
     public function aktivasi($id_riwayat = "", $nik = "")
     {

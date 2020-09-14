@@ -9,7 +9,7 @@
       <div class="card">
         <div class="card-header">
           <button type="button" class="btn btn-success float-left" id="btn-tambah-user">
-            Tambah Data user
+            Tambah Data Pengguna
           </button>
         </div>
         <div class="card-body">
@@ -17,7 +17,7 @@
             <thead>
               <tr>
                 <th>No</th>
-                <th>nik</th>
+                <th>NIK</th>
                 <th>Nama lengkap</th>
                 <th>Tempat lahir</th>
                 <th>Tanggal lahir</th>
@@ -56,7 +56,7 @@
             <tfoot>
               <tr>
                 <th>No</th>
-                <th>nik</th>
+                <th>NIK</th>
                 <th>Nama lengkap</th>
                 <th>Tempat lahir</th>
                 <th>Tanggal lahir</th>
@@ -81,7 +81,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Tambah Data user</h4>
+        <h4 class="modal-title">Tambah Data Pengguna</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -101,14 +101,14 @@
             <div class="tab-pane fade show active" id="data_diri" role="tabpanel" aria-labelledby="data_diri-tab">
               <div class="card-body">
                 <div class="form-group">
-                  <label for="nik">nik</label>
+                  <label for="nik">NIK</label>
                   <input type="text" class="form-control" id="nik" name="nik" placeholder="Masukan nik" required>
                   <i class="text-warning" id="warning-text"></i>
                 </div>
 
                 <div class="form-group">
                   <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                       <label for="nama">Nama user</label>
                       <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan nama user" required>
                     </div>
@@ -164,25 +164,25 @@
 
                 <div class="form-group">
                   <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                       <label for="id_provinsi">Provinsi</label>
                       <select class="form-control" name="id_provinsi" id="id_provinsi" required>
                         <option>-- Pilih Provinsi --</option>
                       </select>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                       <label for="id_kabupaten">Kabupaten</label>
                       <select class="form-control" name="id_kabupaten" id="id_kabupaten" required>
                         <option>-- Pilih Kabupaten --</option>
                       </select>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                       <label for="id_kecamatan">Kecamatan</label>
                       <select class="form-control" name="id_kecamatan" id="id_kecamatan" required>
                         <option>-- Pilih Kecamatan --</option>
                       </select>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                       <label for="id_desa">Desa</label>
                       <select class="form-control" name="id_desa" id="id_desa" required>
                         <option>-- Pilih Desa --</option>
@@ -237,8 +237,8 @@
                 <div class="form-group">
                   <label for="app_level">Level Aplikasi</label>
                   <select name="app_level" id="app_level" class="form-control" required>
-                    <option value="admin">Admin</option>
-                    <option value="user">user</option>
+                    <option value="admin">Admin/Petugas/Dokter</option>
+                    <option value="user">User/Pasien</option>
                   </select>
                 </div>
                 <div class="form-group">
@@ -274,7 +274,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Update Data user</h4>
+        <h4 class="modal-title">Update Data Pengguna</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -291,13 +291,13 @@
             <div class="tab-pane fade show active" id="data_diri" role="tabpanel" aria-labelledby="data_diri-tab">
               <div class="card-body">
                 <div class="form-group">
-                  <label for="nik">nik</label>
+                  <label for="nik">NIK</label>
                   <input type="text" class="form-control" name="nik" placeholder="Masukan nik" required readonly>
                 </div>
 
                 <div class="form-group">
                   <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                       <label for="nama">Nama user</label>
                       <input type="text" class="form-control" name="nama" placeholder="Masukan nama user" required>
                     </div>
@@ -345,25 +345,25 @@
 
                 <div class="form-group">
                   <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                       <label for="id_provinsi">Provinsi</label>
                       <select class="form-control" name="id_provinsi" required>
                         <option>-- Pilih Provinsi --</option>
                       </select>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                       <label for="id_kabupaten">Kabupaten</label>
                       <select class="form-control" name="id_kabupaten" required>
                         <option>-- Pilih Kabupaten --</option>
                       </select>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                       <label for="id_kecamatan">Kecamatan</label>
                       <select class="form-control" name="id_kecamatan" required>
                         <option>-- Pilih Kecamatan --</option>
                       </select>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                       <label for="id_desa">Desa</label>
                       <select class="form-control" name="id_desa" required>
                         <option>-- Pilih Desa --</option>
@@ -427,7 +427,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Detail Data user</h4>
+        <h4 class="modal-title">Detail Data Pengguna</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -447,13 +447,13 @@
             <div class="tab-pane fade show active" id="data_diri_detail" role="tabpanel" aria-labelledby="data_diri_detail-tab">
               <div class="card-body">
                 <div class="form-group">
-                  <label for="nik">nik</label>
+                  <label for="nik">NIK</label>
                   <input type="text" class="form-control" name="nik" placeholder="Masukan nik" readonly>
                 </div>
 
                 <div class="form-group">
                   <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                       <label for="nama">Nama user</label>
                       <input type="text" class="form-control" name="nama" placeholder="Masukan nama user" readonly>
                     </div>
@@ -487,19 +487,19 @@
 
                 <div class="form-group">
                   <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                       <label for="id_provinsi">Provinsi</label>
                       <input type="text" class="form-control" name="id_provinsi" readonly>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                       <label for="id_kabupaten">Kabupaten</label>
                       <input type="text" class="form-control" name="id_kabupaten" readonly>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                       <label for="id_kecamatan">Kecamatan</label>
                       <input type="text" class="form-control" name="id_kecamatan" readonly>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                       <label for="id_desa">Desa</label>
                       <input type="text" class="form-control" name="id_desa" readonly>
                     </div>
@@ -984,7 +984,7 @@
         modal.find('[name="alamat_lengkap"]').val(res.alamat_lengkap);
         modal.find('[name="no_telepon"]').val(res.no_telepon);
         modal.find('[name="c-nik"]').val(res.nik);
-        modal.find('[name="app_level"]').val(res.app_level);
+        (res.app_level == "admin") ? modal.find('[name="app_level"]').val("Admin/Petugas/Dokter"): modal.find('[name="app_level"]').val("User/Pasien");
         let lokasi = "<?= base_url('upload/'); ?>" + res.foto;
         modal.find('[name="pas_foto"]').prop('src', lokasi);
         modal.find('[name="info-text"]').html(lokasi);
@@ -1175,7 +1175,8 @@
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Hapus Data'
+      confirmButtonText: 'Hapus Data',
+      cancelButtonText: 'Batal'
     }).then((result) => {
       if (result.value) {
         document.location.href = href;
@@ -1317,7 +1318,8 @@
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Reset Password'
+      confirmButtonText: 'Reset Password',
+      cancelButtonText: 'Batal'
     }).then((result) => {
       if (result.value) {
         document.location.href = href;

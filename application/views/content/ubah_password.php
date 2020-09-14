@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <div class="card card-info">
+                <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title">Form Ubah Password</h3>
                     </div>
@@ -30,8 +30,8 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="button" class="btn btn-info btn-submit">Submit</button>
-                            <button type="buttol" class="btn btn-default float-right btn-reset">Batal</button>
+                            <button type="reset" class="btn btn-default btn-reset">Batal</button>
+                            <button type="button" class="btn btn-primary float-right btn-submit">Submit</button>
                         </div>
                         <!-- /.card-footer -->
                     </form>
