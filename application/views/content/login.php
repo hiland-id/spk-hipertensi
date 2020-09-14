@@ -7,8 +7,8 @@
   <title>Sistem Pakar Hipertensi | Log in</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="title" content="Sistem Informasi Keuseran, SIMPEG, Hiland.id">
-  <meta name="description" content="Sistem Informasi Keusern atau SIMPEG dikembangkan oleh Hiland Group, menggunakan framework CI3, dan fitur realtime notifikasi informasi kenaikan berkala, kenaikan pangkat dan informasi pensiun.">
+  <meta name="title" content="Sistem Pakar Hipertensi, SPHIPERTENSI, Hiland.id">
+  <meta name="description" content="Sistem Pakar Hipertensi, menggunakan framework CI3.">
 
   <?php $this->load->view('template/head.php'); ?>
 
