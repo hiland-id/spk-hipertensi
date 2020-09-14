@@ -6,8 +6,8 @@ $segmen2 = $this->uri->segment(2);
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a href="<?= base_url('dashboard'); ?>" class="brand-link">
-    <img src="<?= base_url(); ?>aset/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-    <span class="brand-text font-weight-light">SIMPEG</span>
+    <!-- <img src="<?= base_url(); ?>aset/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
+    <span class="brand-text font-weight-light">Sistem Pakar Hipertensi</span>
   </a>
   <!-- Sidebar -->
   <div class="sidebar">
@@ -47,7 +47,7 @@ $segmen2 = $this->uri->segment(2);
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url('user/riwayat'); ?>" class="nav-link <?= ($segmen1 == 'user' && $segmen2 == 'riwayat') ? 'active' : ''; ?>">
+              <a href="<?= base_url('riwayat'); ?>" class="nav-link <?= ($segmen1 == 'user' && $segmen2 == 'riwayat') ? 'active' : ''; ?>">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Riwayat Periksa</p>
               </a>
@@ -56,40 +56,41 @@ $segmen2 = $this->uri->segment(2);
         </li>
         <li class="nav-item">
           <a href="<?= base_url('diagnosa'); ?>" class="nav-link  <?= ($segmen1 == 'diagnosa') ? 'active' : ''; ?>">
-            <i class="nav-icon fas fa-check"></i>
+            <i class="nav-icon fas fa-user-md"></i>
             <p>
               Diagnosa
             </p>
           </a>
         </li>
-        <li class="nav-item has-treeview <?= ($segmen1 == 'master') ? 'menu-open' : ''; ?>">
-          <a href="#" class="nav-link <?= ($segmen1 == 'master') ? 'active' : ''; ?>">
-            <i class="nav-icon fas fa-copy"></i>
+        <li class="nav-item">
+          <a href="<?= base_url('gejala'); ?>" class="nav-link  <?= ($segmen1 == 'gejala') ? 'active' : ''; ?>">
+            <i class="nav-icon fas fa-file-medical-alt"></i>
             <p>
-              Master Data
-              <i class="right fas fa-angle-left"></i>
+              Gejala
             </p>
           </a>
-          <ul class="nav nav-treeview menu-open">
-            <li class="nav-item">
-              <a href="<?= base_url('master/golongan'); ?>" class="nav-link <?= ($segmen1 == 'master' && $segmen2 == 'golongan') ? 'active' : ''; ?>">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Golongan</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url('master/jabatan'); ?>" class="nav-link <?= ($segmen1 == 'master' && $segmen2 == 'jabatan') ? 'active' : ''; ?>">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Jabatan</p>
-              </a>
-            </li>
-          </ul>
         </li>
         <li class="nav-item">
-          <a href="<?= base_url('notifikasi'); ?>" class="nav-link  <?= ($segmen1 == 'notifikasi') ? 'active' : ''; ?>">
-            <i class="nav-icon fas fa-bell"></i>
+          <a href="<?= base_url('penyakit'); ?>" class="nav-link  <?= ($segmen1 == 'penyakit') ? 'active' : ''; ?>">
+            <i class="nav-icon fas fa-procedures"></i>
             <p>
-              Notifikasi
+              Penyakit
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?= base_url('terapi'); ?>" class="nav-link  <?= ($segmen1 == 'terapi') ? 'active' : ''; ?>">
+            <i class="nav-icon fas fa-file-medical-alt"></i>
+            <p>
+              Terapi
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?= base_url('rule'); ?>" class="nav-link  <?= ($segmen1 == 'rule') ? 'active' : ''; ?>">
+            <i class="nav-icon fas fa-briefcase-medical"></i>
+            <p>
+              Rule
             </p>
           </a>
         </li>
@@ -104,19 +105,19 @@ $segmen2 = $this->uri->segment(2);
           <ul class="nav nav-treeview">
             <li class="nav-item">
               <a href="<?= base_url('dashboard/profil'); ?>" class="nav-link <?= ($segmen1 == 'dashboard' && $segmen2 == 'profil') ? 'active' : ''; ?>">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="far fas fa-user"></i>
                 <p>Profil</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="<?= base_url('dashboard/ubah_password'); ?>" class="nav-link <?= ($segmen1 == 'dashboard' && $segmen2 == 'ubah_password') ? 'active' : ''; ?>">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="far fa fa-edit"></i>
                 <p>Ubah Password</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="<?= base_url('login/logout'); ?>" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-sign-out-alt"></i>
                 <p>Logout</p>
               </a>
             </li>

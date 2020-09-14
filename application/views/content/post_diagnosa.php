@@ -12,7 +12,7 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <table class="table table-hover table-striped">
+                        <table id="diagnosa" class="table table-bordered table-hover nowrap" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -20,7 +20,7 @@
                                     <th>Nama Penyakit</th>
                                     <th>Deskripsi</th>
                                     <th>Terapi</th>
-                                    <th>Skor</th>
+                                    <!-- <th>Skor</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -46,11 +46,11 @@
                                                 <?= $value['deskripsi']; ?>
                                             </td>
                                             <td>
-                                                <?= $value['terapi']; ?>
+                                                <?= $value['nik']; ?>
                                             </td>
-                                            <td>
+                                            <!-- <td>
                                                 <?= $value['skor'] . " %"; ?>
-                                            </td>
+                                            </td> -->
                                         </tr>
                                 <?php
                                     }
@@ -64,7 +64,7 @@
                                     <th>Nama Penyakit</th>
                                     <th>Deskripsi</th>
                                     <th>Terapi</th>
-                                    <th>Skor</th>
+                                    <!-- <th>Skor</th> -->
                                 </tr>
                             </tfoot>
                         </table>
@@ -80,3 +80,11 @@
 </section>
 <!-- /.content -->
 </div>
+<script type="text/javascript">
+  $(function()
+  {
+    $('#diagnosa').DataTable({
+      responsive:true
+    });
+
+</script>

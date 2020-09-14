@@ -9,6 +9,12 @@ class M_diagnosa extends CI_Model
         return $this->db->get('gejala');
     }
 
+    public function get_user()
+	{
+		$this->db->from('user');
+		$query = $this->db->get();
+		return $query->result();
+	}
 
     public function count_penyakit()
     {
@@ -45,15 +51,24 @@ class M_diagnosa extends CI_Model
                 }
             }
             $skor = ($gejala / $jumlah_gejala) * 100;
+            $nik = $this->input->post('nik');
+            $pasien = $this->db->from('user')->where('nik', $nik)->get()->row();
+
             if (($skor <= 100) and ($skor > 0)) {
                 $diagnosa[$key] = [
                     'id_penyakit' => $data->id_penyakit_aktif,
                     'nama_penyakit' => $data->penyakit,
                     'deskripsi' => $data->deskripsi,
                     'terapi' => $data->terapi,
-                    'skor' => $skor
+                    'skor' => $skor,
+                    'nik'=>$pasien->nama,
                 ];
-            }
+                $data = array('id_penyakit' => $data->id_penyakit_aktif,
+                    'nik'=>$pasien->nik,
+                    'tgl_periksa'=>date('Y-m-d')
+                );
+                $query=$this->db->insert('riwayat_periksa', $data);
+           }
         }
 
         return $diagnosa;

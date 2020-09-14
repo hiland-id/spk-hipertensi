@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Sistem Informasi Keuseran | Log in</title>
+  <title>Sistem Pakar Hipertensi | Log in</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="title" content="Sistem Informasi Keuseran, SIMPEG, Hiland.id">
@@ -21,7 +21,7 @@
 
   <div class="login-box">
     <div class="login-logo">
-      <a href="#"><b>SIM</b>PEG</a>
+      <a href="#"><b>SP</b>HIPERTENSI</a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
@@ -30,7 +30,7 @@
 
         <form action="<?= base_url('login/cek_login'); ?>" method="post" role="form">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="nik" name="nik">
+            <input type="text" class="form-control" placeholder="username" name="nik">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-user"></span>

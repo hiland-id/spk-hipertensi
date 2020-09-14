@@ -13,11 +13,27 @@
                 <div class="card-body">
                     <form role="form" action="<?= base_url('diagnosa/hasil'); ?>" method="post">
                         <div class="row">
+                        <div class="col-md-12">
+                        <div class="form-group">
+                        <label for="exampleInputPassword1">Nama Pasien</label>
+                        <select class="form-control" name="nik">
+                            <option>--Pilih Pasien--</option>
+                            <?php
+                            foreach ($user as $data) {
+                            echo "<option value='$data->nik'>$data->nama</option>";
+                            }
+                            ?>
+                        </select>
+                        </div>
+                            </div>
                             <?php foreach ($dt_gejala as $value) : ?>
-                                <div class="col-md-1 ml-4">
+                                <div class="col-md-1 ml-1">
                                     <input type="checkbox" name="gejala[]" id="gejala" value="<?= $value->id_gejala; ?>">
                                 </div>
-                                <div class="col-md-10">
+                                <div class="col-md-2">
+                                    <p class="mb-0"><?= $value->id_gejala; ?></p>
+                                </div>
+                                <div class="col-md-8">
                                     <p class="mb-0"><?= $value->gejala; ?></p>
                                 </div>
                             <?php endforeach; ?>

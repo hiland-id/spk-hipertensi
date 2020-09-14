@@ -1,5 +1,5 @@
   <footer class="main-footer">
-    <strong>Copyright &copy; <?= date('Y'); ?> <a href="#">Hiland.id</a>.</strong>
+    <strong>Copyright &copy; <?= date('Y'); ?> <a href="#">Arika Juwita Z</a>.</strong>
     All rights reserved.
     <div class="float-center d-none d-sm-inline-block">
       Page Rendered is <strong>{elapsed_time}</strong><i> second</i>

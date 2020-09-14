@@ -16,8 +16,6 @@
 
                 <h3 class="profile-username text-center"><?= (!empty($dt_user->gelar_depan)) ? $dt_user->gelar_depan . ". " . $dt_user->nama . ", " . $dt_user->gelar_belakang : "" . $dt_user->nama . ", " . $dt_user->gelar_belakang; ?></h3>
 
-                <p class="text-muted text-center"><?= $dt_user->nama_jabatan; ?></p>
-
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
                     <b>nik</b> <a class="float-right"><?= $dt_user->nik; ?></a>
@@ -30,9 +28,6 @@
                   </li>
                   <li class="list-group-item">
                     <b>No Telepon</b> <a class="float-right"><?= $dt_user->no_telepon; ?></a>
-                  </li>
-                  <li class="list-group-item">
-                    <b>Golongan</b> <a class="float-right"><?= $dt_user->nama_golongan; ?></a>
                   </li>
                   <li class="list-group-item">
                     <b>Tempat Tanggal Lahir</b> <a class="float-right"><?= $dt_user->tempat_lahir . ", " . $dt_user->tanggal_lahir ?></a>
