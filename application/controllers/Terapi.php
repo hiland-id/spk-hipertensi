@@ -37,7 +37,7 @@ class terapi extends MY_Controller
 				redirect('terapi');
 			} else {
 				$this->session->set_flashdata('gagal', 'Data terapi Gagal Disimpan');
-				redirect('terapi/tambah');
+				redirect('terapi');
 			}
 		} else {
 			$aksi = $this->m_terapi->ubah();
@@ -46,7 +46,7 @@ class terapi extends MY_Controller
 				redirect('terapi');
 			} else {
 				$this->session->set_flashdata('berhasil', 'Data terapi Tidak Berhasil Diubah');
-				redirect('terapi/edit');
+				redirect('terapi');
 			}
 		}
 	}

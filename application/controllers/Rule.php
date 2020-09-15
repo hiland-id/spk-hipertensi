@@ -39,7 +39,7 @@ class Rule extends MY_Controller
 				redirect('rule');
 			} else {
 				$this->session->set_flashdata('gagal', 'Data rule Gagal Disimpan');
-				redirect('rule/tambah');
+				redirect('rule');
 			}
 		} else {
 			$aksi = $this->m_rule->ubah();
@@ -48,7 +48,7 @@ class Rule extends MY_Controller
 				redirect('rule');
 			} else {
 				$this->session->set_flashdata('berhasil', 'Data rule Tidak Berhasil Diubah');
-				redirect('rule/edit');
+				redirect('rule');
 			}
 		}
 	}
