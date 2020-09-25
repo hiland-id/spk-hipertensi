@@ -30,7 +30,7 @@ class gejala extends MY_Controller
 
 	public function simpan()
 	{
-		if (empty($this->input->post('id_gejala'))) {
+		// if (empty($this->input->post('id_gejala'))) {
 			$aksi = $this->m_gejala->simpan();
 			if ($aksi) {
 				$this->session->set_flashdata('berhasil', 'Data gejala Berhasil Disimpan');
@@ -39,7 +39,19 @@ class gejala extends MY_Controller
 				$this->session->set_flashdata('gagal', 'Data gejala Gagal Disimpan');
 				redirect('gejala');
 			}
-		} else {
+		// } else {
+		// 	$aksi = $this->m_gejala->ubah();
+		// 	if ($aksi) {
+		// 		$this->session->set_flashdata('berhasil', 'Data gejala Berhasil Diubah');
+		// 		redirect('gejala');
+		// 	} else {
+		// 		$this->session->set_flashdata('gagal', 'Data gejala Tidak Berhasil Diubah');
+		// 		redirect('gejala');
+		// 	}
+		// }
+	}
+	public function ubah()
+	{
 			$aksi = $this->m_gejala->ubah();
 			if ($aksi) {
 				$this->session->set_flashdata('berhasil', 'Data gejala Berhasil Diubah');
@@ -48,7 +60,6 @@ class gejala extends MY_Controller
 				$this->session->set_flashdata('gagal', 'Data gejala Tidak Berhasil Diubah');
 				redirect('gejala');
 			}
-		}
 	}
 	public function hapus($id_gejala)
 	{

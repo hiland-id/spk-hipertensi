@@ -109,7 +109,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form role="form" action="<?= base_url('gejala/simpan'); ?>" method="post">
+        <form role="form" action="<?= base_url('gejala/ubah'); ?>" method="post">
           <div class="card-body">
             <input type="hidden" name="id_gejala" id="id_gejala" required>
             <div class="form-group">

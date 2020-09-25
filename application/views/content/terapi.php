@@ -108,7 +108,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form role="form" action="<?= base_url('terapi/simpan'); ?>" method="post">
+        <form role="form" action="<?= base_url('terapi/ubah'); ?>" method="post">
           <div class="card-body">
             <input type="hidden" name="id_terapi" id="id_terapi" required>
             <div class="form-group">

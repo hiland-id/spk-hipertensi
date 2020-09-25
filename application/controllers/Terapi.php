@@ -30,7 +30,7 @@ class terapi extends MY_Controller
 
 	public function simpan()
 	{
-		if (empty($this->input->post('id_terapi'))) {
+		// if (empty($this->input->post('id_terapi'))) {
 			$aksi = $this->m_terapi->simpan();
 			if ($aksi) {
 				$this->session->set_flashdata('berhasil', 'Data terapi Berhasil Disimpan');
@@ -39,7 +39,20 @@ class terapi extends MY_Controller
 				$this->session->set_flashdata('gagal', 'Data terapi Gagal Disimpan');
 				redirect('terapi');
 			}
-		} else {
+		// } else {
+		// 	$aksi = $this->m_terapi->ubah();
+		// 	if ($aksi) {
+		// 		$this->session->set_flashdata('berhasil', 'Data terapi Berhasil Diubah');
+		// 		redirect('terapi');
+		// 	} else {
+		// 		$this->session->set_flashdata('berhasil', 'Data terapi Tidak Berhasil Diubah');
+		// 		redirect('terapi');
+		// 	}
+		// }
+	}
+
+	public function ubah()
+	{
 			$aksi = $this->m_terapi->ubah();
 			if ($aksi) {
 				$this->session->set_flashdata('berhasil', 'Data terapi Berhasil Diubah');
@@ -48,7 +61,6 @@ class terapi extends MY_Controller
 				$this->session->set_flashdata('berhasil', 'Data terapi Tidak Berhasil Diubah');
 				redirect('terapi');
 			}
-		}
 	}
 
 	public function hapus($id_terapi)
